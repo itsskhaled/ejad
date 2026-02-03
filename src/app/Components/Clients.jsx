@@ -9,7 +9,7 @@ import MOE from "@/app/images/MOE.png";
 import National from "@/app/images/National-Water-Company-Saudi-Arabia-01-e1750240721168.png";
 import RCFJ from "@/app/images/RCFJ-Y.png";
 import SAB from "@/app/images/SAB.png";
-import saudiBA from "@/app/images/saudiBA.png";
+import tmara from "@/app/images/tmara.webp";
 import SEC from "@/app/images/SEC.png";
 import SNB from "@/app/images/SNB.png";
 import Stclogo from "@/app/images/Stc-logo.png";
@@ -79,7 +79,7 @@ const Clients = [
     { id: 7, image: National, alt: "National" },
     { id: 8, image: RCFJ, alt: "RCFJ" },
     { id: 9, image: SAB, alt: "SAB" },
-    { id: 10, image: saudiBA, alt: "saudiBA" },
+    { id: 10, image: tmara, alt: "tmara" },
     { id: 11, image: SEC, alt: "SEC" },
     { id: 12, image: SNB, alt: "SNB" },
     { id: 13, image: Stclogo, alt: "Stclogo" },

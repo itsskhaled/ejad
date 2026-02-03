@@ -29,6 +29,72 @@ const fsAlbertArabic = localFont({
   display: "swap",
 });
 
+export const metadata = {
+  title: {
+    default: "إجادة الأعمال للمحاماة والاستشارات القانونية",
+    template: "%s | إجادة للمحاماة",
+  },
+  description:
+    "إجادة الأعمال للمحاماة والاستشارات القانونية تقدم خدمات قانونية متكاملة تشمل التقاضي، التحكيم، صياغة العقود، والاستشارات القانونية للأفراد والشركات في المملكة العربية السعودية.",
+  keywords: [
+    "محاماة",
+    "استشارات قانونية",
+    "محامي في السعودية",
+    "مكتب محاماة",
+    "التقاضي",
+    "التحكيم",
+    "صياغة العقود",
+    "إجادة للمحاماة",
+  ],
+  authors: [{ name: "Ejada Law Firm" }],
+  creator: "Ejada Law Firm",
+  publisher: "Ejada Law Firm",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "ar_SA",
+    url: "/og-image.jpg",
+    siteName: "إجادة للمحاماة",
+    title: "إجادة الأعمال للمحاماة والاستشارات القانونية",
+    description:
+      "حلول قانونية متكاملة وخدمات استشارية احترافية للأفراد والشركات في المملكة العربية السعودية.",
+    images: [
+      {
+        url: "/og-image.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "إجادة للمحاماة والاستشارات القانونية",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "إجادة الأعمال للمحاماة والاستشارات القانونية",
+    description:
+      "مكتب محاماة يقدم خدمات قانونية شاملة تشمل التقاضي، التحكيم، وصياغة العقود.",
+    images: ["/og-image.jpg"],
+  },
+
+  alternates: {
+    canonical: "https://ejadalawfirm.sa",
+  },
+};
+
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">

@@ -1,11 +1,10 @@
 "use client";
 
-import Credit1 from "@/app/images/almothg.png";
-import Credit2 from "@/app/images/H.png";
-import Credit3 from "@/app/images/infath.png";
-import Credit4 from "@/app/images/MinistryOfJustice.png";
-import Credit5 from "@/app/images/Monshaat.png";
-import Credit6 from "@/app/images/saudiBA.png";
+import Credit1 from "@/app/images/watan.png";
+import Credit2 from "@/app/images/mobily.png";
+import Credit3 from "@/app/images/ELMM.png";
+import Credit4 from "@/app/images/SNB.png";
+import Credit5 from "@/app/images/tabby.png";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -32,9 +31,8 @@ export default function SolutionsCTA() {
       { id: 1, image: Credit1, alt: "Almothg" },
       { id: 2, image: Credit2, alt: "H" },
       { id: 3, image: Credit3, alt: "Infath" },
-      { id: 4, image: Credit4, alt: "MinistryOfJustice" },
-      { id: 5, image: Credit5, alt: "Monshaat" },
-      { id: 6, image: Credit6, alt: "SaudiBA" },
+      { id: 4, image: Credit4, alt: "SNB" },
+      { id: 5, image: Credit5, alt: "SaudiBA" },
     ],
     []
   );
@@ -131,7 +129,7 @@ export default function SolutionsCTA() {
         >
           {slides.map((item, i) => (
             <SwiperSlide key={`${item.id}-${i}`} className="!w-auto">
-              <div className="w-40 h-40">
+              <div className="w-40 h-40 mx-10">
                 <Image src={item.image} alt={item.alt} className="w-full h-full object-contain" />
               </div>
             </SwiperSlide>
