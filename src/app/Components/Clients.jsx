@@ -55,7 +55,7 @@ export default function ClientsSections() {
     })
     return (
         <section ref={containerRef} className="w-full relative py-20 px-20">
-            <h1 ref={titleRef} className="text-center text-5xl sm:text-5xl md:text-6xl lg:text-8xl">عملائنا</h1>
+            <h1 ref={titleRef} className="text-center text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">عملائنا</h1>
             <div className="flex flex-wrap justify-center w-full gap-10 my-20">
                 {Clients.map((item, i) => {
                     return (

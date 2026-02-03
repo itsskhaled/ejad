@@ -19,6 +19,7 @@ export default function WhySection() {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const lienRef = useRef(null);
+  const lightRef = useRef(null);
 
   const containerCTA = useRef(null);
   const titleCTA = useRef(null);
@@ -26,6 +27,15 @@ export default function WhySection() {
   const btnCTA = useRef(null);
 
   useGSAP(() => {
+
+    gsap.fromTo(lightRef.current, { y: 300, opacity: 0.5 }, {
+      y: 0,
+      opacity: 1,
+      duration: 2,
+      ease: "power1.inOut",
+      repeat: -1,
+      yoyo: true
+    })
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -111,7 +121,8 @@ export default function WhySection() {
       </div>
 
       {/* Content */}
-      <div className="flex justify-center w-full">
+      <div className="flex justify-center w-full relative">
+        <div ref={lightRef} className="w-20 h-100 md:h-50 bg-[#F9BB00] blur-2xl absolute -right-15" />
         <div className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-50 md:gap-12">
             <div className="space-y-8">
@@ -131,13 +142,19 @@ export default function WhySection() {
 
       {/* CTA */}
       <div ref={containerCTA} className="w-full bg-[#404250] py-10 sm:py-12 px-4 sm:px-8 lg:px-12 text-center">
-        <h1 ref={titleCTA} className="text-[#F9BB00] font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl my-4">
+        <h1 ref={titleCTA} className="text-[#F9BB00] text-xl sm:text-2xl md:text-3xl lg:text-5xl my-4 font-bold leading-[1.5]">
           شريكك القانوني الاول
         </h1>
         <p ref={infoCTA} className="text-white text-sm sm:text-base md:text-lg my-4 max-w-3xl mx-auto leading-relaxed">
           تواصل معنا لحجز استشارتك القانونية واكتشف كيف يمكننا مساعدتك في حفظ حقوقك.
         </p>
-        <button ref={btnCTA} className="bg-[#F9BB00] text-[#404250] rounded-md px-6 sm:px-8 py-3 text-sm sm:text-base md:text-lg font-bold my-3 cursor-pointer">
+        <button onClick={() => {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: "#Consultations",
+            ease: "power2.out",
+          });
+        }} ref={btnCTA} className="bg-[#F9BB00] text-[#404250] rounded-md px-6 sm:px-8 py-3 text-sm sm:text-base md:text-lg font-bold my-3 cursor-pointer">
           استشارة قانونية فورية
         </button>
       </div>
@@ -188,7 +205,7 @@ function FeatureItem({ item }) {
       }, 0)
   })
   return (
-    <div ref={containerRef} className="flex items-start gap-4 sm:gap-5">
+    <div ref={containerRef} className="flex items-start gap-5 sm:gap-5 relative">
       <span ref={iconRef} className="shrink-0 mt-1">{item.icon}</span>
 
       <div className="min-w-0">

@@ -73,7 +73,7 @@ export default function SuccessStory() {
         <section ref={containerRef} className="w-full relative py-20 overflow-hidden">
             {/* Title */}
             <div className="flex w-full items-center gap-5 md:gap-50">
-                <h1 ref={titleRef} className="text-[#1E1E1E] text-2xl sm:text-2xl md:text-4xl lg:text-5xl pr-10 md:pr-10 whitespace-nowrap">
+                <h1 ref={titleRef} className="text-[#1E1E1E] text-2xl sm:text-2xl md:text-4xl lg:text-5xl pr-10 md:pr-10 whitespace-nowrap font-bold">
                     نبني قصة نجاح تصنع الفرق
                 </h1>
                 <div className="flex-1">
@@ -115,7 +115,7 @@ export default function SuccessStory() {
                         <SwiperSlide key={item.id} className="overflow-visible">
 
                             <div className="relative pt-12 overflow-visible">
-                                <div className="w-[200px] h-[80px] bg-white rounded-2xl absolute top-0 right-10 z-60 px-4">
+                                <div className="w-[200px] h-[80px] bg-white rounded-2xl absolute top-0 right-10 z-60 px-4 shadow">
                                     <Image src={item.image} alt={item.alt} className="w-full h-full object-contain" />
                                 </div>
 

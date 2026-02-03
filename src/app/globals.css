@@ -18,6 +18,11 @@ body {
   font-family: var(--font-fs-albert-arabic), system-ui, sans-serif;
 }
 
+::selection{
+  background: #F9BB00;
+  color: #000 ;
+}
+
 
 /* ===== SuccessStory Swiper Arrows ===== */
 .nav-btn {
@@ -72,4 +77,9 @@ body {
 .nav-btn.swiper-button-disabled {
   opacity: 0.35;
   cursor: not-allowed;
+}
+
+/* Infinity marquee for Swiper */
+.logos-marquee .swiper-wrapper {
+  transition-timing-function: linear !important;
 }

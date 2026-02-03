@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { Instagram, Linkedin, Twitter } from "@deemlol/next-icons";
 import { useRef } from "react";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger)
 export default function Footer() {
@@ -46,7 +47,7 @@ export default function Footer() {
             stagger: { each: .05 },
             ease: "power2.out"
         })
-            .from([contactInfos, iconFooter , logoRef.current], {
+            .from([contactInfos, iconFooter, logoRef.current], {
                 opacity: 0,
                 ease: "power2.out",
                 duration: .5,
@@ -56,9 +57,9 @@ export default function Footer() {
 
     return (
         <section ref={containerRef} className="w-full relative bg-[#404250]">
-            <div className="flex flex-col md:flex-row justify-between w-full py-20 px-20">
+            <div className="flex flex-col md:flex-row justify-between w-full py-20 px-5 md:px-20">
                 <div className="">
-                    <h1 ref={titleRef} className="text-white my-10 text-2xl">إجادة الأعمال للمحاماة و الإستشارات القانونية</h1>
+                    <h1 ref={titleRef} className="text-white my-10 text-2xl font-bold">إجادة الأعمال للمحاماة و الإستشارات القانونية</h1>
                     <p ref={textRef} className="text-white md:w-xl">تقدم الشركة خدمات قانونية شاملة وتمثيل قانوني لعملائنا. وبفضل فهمنا المتعمق لعملائنا وخبراتنا القانونية, نستطيع تقديم خدمات تمثيل قانوني واعية وفعالة في مجموعة متنوعة من القطاعات من ضمنها منازعات الشركات والقطاعات التجارية وقطاعات الانشاءات مع التركيز بشكل خاص على مجالي التقاضي والتحكيم في مختلف القطاعات والمجالات</p>
                     <div className="my-10">
                         {contact.map((item) => {
@@ -77,18 +78,18 @@ export default function Footer() {
                         <Image src={logoFooter} alt="Logo Footer" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex gap-4">
-                        <button className="cursor-pointer iconFooter" aria-label="Instagram">
+                        <Link href="https://www.instagram.com/ejadalawfirm?igsh=MWRreHM0ZDlyd3l0cA%3D%3D" target="_blank" className="cursor-pointer iconFooter" aria-label="Instagram">
                             <Instagram stroke="#FFFFFF" />
-                        </button>
-                        <button className="cursor-pointer iconFooter" aria-label="Twitter">
+                        </Link>
+                        <Link href="https://x.com/ejadalawfirm?s=21" target="_blank" className="cursor-pointer iconFooter" aria-label="Twitter">
                             <Twitter stroke="#FFFFFF" />
-                        </button>
-                        <button className="cursor-pointer iconFooter" aria-label="LinkedIn">
+                        </Link>
+                        <Link href="https://www.linkedin.com/company/ejadalawfirm/" target="_blank" className="cursor-pointer iconFooter" aria-label="LinkedIn">
                             <Linkedin stroke="#FFFFFF" />
-                        </button>
-                        <button className="cursor-pointer iconFooter" aria-label="MapPinned">
+                        </Link>
+                        <Link href="https://maps.app.goo.gl/PrKiJzZxDz2ErYsu9?g_st=ic" target="_blank" className="cursor-pointer iconFooter" aria-label="MapPinned">
                             <MapPinned stroke="#FFFFFF" />
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

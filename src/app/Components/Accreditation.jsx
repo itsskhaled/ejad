@@ -8,12 +8,12 @@ import Credit5 from "@/app/images/Monshaat.png";
 import Credit6 from "@/app/images/saudiBA.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import { SplitText } from "gsap/all";
 import Image from "next/image";
 import { useRef } from "react";
 
-gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
+gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger, ScrollToPlugin);
 export default function AccreditationSection() {
 
     const containerRef = useRef(null);
@@ -75,14 +75,14 @@ export default function AccreditationSection() {
                 }, "<50%")
             }
         })
-        companyRef.current.forEach((_, i) => {
-            tl.from(companyRef.current[i], {
-                opacity: 0,
-                ease: "power2.out",
-                duration: .5,
-                stagger: 0.05
-            })
-        }, 0)
+
+        tl.from(companyRef.current, {
+            opacity: 0,
+            ease: "power2.out",
+            duration: .5,
+            stagger: 0.05
+        })
+
 
         const CTA = gsap.timeline({
             scrollTrigger: {
@@ -125,7 +125,7 @@ export default function AccreditationSection() {
         })
         CTA.from(btnCTA.current, {
             opacity: 0,
-            scale:0,
+            scale: 0,
             duration: 1,
             ease: "elastic.out"
         }, "<50%")
@@ -140,7 +140,7 @@ export default function AccreditationSection() {
                         <div ref={lineRef} className="w-full h-0.5 bg-black" />
                     </div>
                     <div>
-                        <h1 ref={titleRef} className="text-[#1E1E1E] text-5xl pl-10 md:pl-30">إعتمادتنا</h1>
+                        <h1 ref={titleRef} className="text-[#1E1E1E] text-5xl pl-10 md:pl-30 font-bold">إعتمادتنا</h1>
                     </div>
                 </div>
             </div>
@@ -158,13 +158,21 @@ export default function AccreditationSection() {
                     })}
                 </div>
             </div>
-            <div ref={ContainerCTA} className="flex flex-col md:flex-row justify-between items-center my-5 w-full bg-[#404250] py-25 px-20">
+            <div ref={ContainerCTA} className="flex flex-col md:flex-row justify-between items-center my-5 w-full bg-[#404250] py-25 px-5 md:px-20">
                 <div className="flex flex-col gap-5">
-                    <h1 ref={titleCTA} className="text-3xl md:text-5xl text-[#F9BB00] my-5 leading-normal">خيارك الأول للتمثيل القانوني </h1>
+                    <h1 ref={titleCTA} className="text-3xl md:text-5xl text-[#F9BB00] my-5 leading-normal font-bold">خيارك الأول للتمثيل القانوني </h1>
                     <p ref={textCTA} className="text-xl md:text-3xl text-white my-5">نقدم مجموعة واسعة من الخدمات القانونية للأفراد و المؤسسات تلبي احتياجاتهم و تحفظ حقوقهم</p>
                 </div>
-                <div ref={btnCTA}>
-                    <button className="text-[#404250] bg-[#F9BB00] px-4 py-2 rounded-md text-2xs md:text-2xl cursor-pointer">أحجز استشارتك القانونية</button>
+                <div className="flex w-full justify-start md:justify-end" ref={btnCTA}>
+                    <button
+                        onClick={() => {
+                            gsap.to(window, {
+                                duration: 1,
+                                scrollTo: { y: 0 },
+                                ease: "power2.out",
+                            });
+                        }}
+                        className="text-[#404250] bg-[#F9BB00] px-4 py-2 rounded-md text-2xs md:text-2xl cursor-pointer font-bold">أحجز استشارتك القانونية</button>
                 </div>
             </div>
         </section>

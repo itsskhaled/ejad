@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import logo1 from "@/app/images/logo1.jpg";
 export default function Navbar() {
@@ -8,7 +9,14 @@ export default function Navbar() {
                     <Image src={logo1} alt="LogoHeader" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                    <button className="text-[#404250] bg-[#F9BB00] px-4 py-2 rounded-md font-bold cursor-pointer">إحصل على إستشارة مجاناً</button>
+                    <button className="text-[#404250] bg-[#F9BB00] px-4 py-2 rounded-md font-bold cursor-pointer" 
+                    onClick={() => {
+                        if (window.fbq) {
+                          window.fbq("track", "Contact");
+                        }
+                    
+                        window.open("https://wa.me/966920008433", "_blank");
+                      }}>إحصل على إستشارة مجاناً</button>
                 </div>
             </div>
         </div>
