@@ -7,12 +7,14 @@ import AboutSection from "./Components/LearnAbout";
 import Navbar from "./Components/NavBar";
 import SolutionsCTA from "./Components/SolutionsCTA";
 import SuccessStory from "./Components/SuccessStory";
+import WhatsApp from "./Components/WhatsApp";
 import WhySection from "./Components/Why";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <WhatsApp />
       <Hero />
       <SolutionsCTA />
       <AboutSection />
